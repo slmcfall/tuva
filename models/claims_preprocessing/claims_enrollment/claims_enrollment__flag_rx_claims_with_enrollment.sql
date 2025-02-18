@@ -14,10 +14,10 @@ with claim_dates as(
         , payer
         , {{ quote_column('plan') }}
         , data_source
-        , {{ dbt.concat([
+        , {{ concat([
                 date_part('year', 'paid_date'),
                 dbt.right(
-                    dbt.concat([
+                    concat([
                         "'0'",
                         date_part('month', 'paid_date'),
                     ]),

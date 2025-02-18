@@ -8,7 +8,7 @@ with demographic_factors as (
           person_id
         /* concatenate demographic risk factors */
 
-    , {{ dbt.concat(
+    , {{ concat(
         [
             "gender",
             "', '",
@@ -65,7 +65,7 @@ with demographic_factors as (
 
     select
           person_id
-        , {{ dbt.concat(["hcc_description", "' (HCC '", "hcc_code", "')'"]) }} as description
+        , {{ concat(["hcc_description", "' (HCC '", "hcc_code", "')'"]) }} as description
         , coefficient
         , factor_type
         , model_version

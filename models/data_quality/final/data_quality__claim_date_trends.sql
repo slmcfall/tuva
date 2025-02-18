@@ -7,7 +7,7 @@ with date_stage as(
 
     select
         date_field
-        , {{ dbt.concat(["year", dbt.right(dbt.concat(["'0'", "month"]), 2)]) }} as year_month
+        , {{ concat(["year", dbt.right(concat(["'0'", "month"]), 2)]) }} as year_month
         , result_count
     from
     (
@@ -26,7 +26,7 @@ with date_stage as(
 
     select
         date_field
-        , {{ dbt.concat(["year", dbt.right(dbt.concat(["'0'", "month"]), 2)]) }} as year_month
+        , {{ concat(["year", dbt.right(concat(["'0'", "month"]), 2)]) }} as year_month
         , result_count
     from
     (
@@ -45,7 +45,7 @@ with date_stage as(
 
     select
         date_field
-        , {{ dbt.concat(["year", dbt.right(dbt.concat(["'0'", "month"]), 2)]) }} as year_month
+        , {{ concat(["year", dbt.right(concat(["'0'", "month"]), 2)]) }} as year_month
         , result_count
     from
     (
@@ -64,7 +64,7 @@ with date_stage as(
 
     select
         date_field
-        , {{ dbt.concat(["year", dbt.right(dbt.concat(["'0'", "month"]), 2)]) }} as year_month
+        , {{ concat(["year", dbt.right(concat(["'0'", "month"]), 2)]) }} as year_month
         , result_count
     from
     (
@@ -83,7 +83,7 @@ with date_stage as(
 
     select
         date_field
-        , {{ dbt.concat(["year", dbt.right(dbt.concat(["'0'", "month"]), 2)]) }} as year_month
+        , {{ concat(["year", dbt.right(concat(["'0'", "month"]), 2)]) }} as year_month
         , result_count
     from
     (
@@ -102,7 +102,7 @@ with date_stage as(
 
     select
         date_field
-        , {{ dbt.concat(["year", dbt.right(dbt.concat(["'0'", "month"]), 2)]) }} as year_month
+        , {{ concat(["year", dbt.right(concat(["'0'", "month"]), 2)]) }} as year_month
         , result_count
     from
     (
@@ -121,7 +121,7 @@ with date_stage as(
 
     select
         date_field
-        , {{ dbt.concat(["year", dbt.right(dbt.concat(["'0'", "month"]), 2)]) }} as year_month
+        , {{ concat(["year", dbt.right(concat(["'0'", "month"]), 2)]) }} as year_month
         , result_count
     from
     (

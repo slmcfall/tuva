@@ -33,7 +33,7 @@ with disqualified_unpivot as (
 
 -- Using the transformed data to perform aggregation
 select 
-    {{ dbt.concat(["'inpatient encounter '", "d.disqualified_reason"]) }} as data_quality_check
+    {{ concat(["'inpatient encounter '", "d.disqualified_reason"]) }} as data_quality_check
     ,  count(distinct encounter_id) as result_count
       , '{{ var('tuva_last_run') }}' as tuva_last_run
 from disqualified_unpivot d
