@@ -14,10 +14,10 @@ group by
 {% else -%}
 
 select
-    null as data_source
-    , null as claim_type
-    , null as claim_count
-    , null as paid_amount
+    CAST(NULL AS VARCHAR) as data_source
+    , CAST(NULL AS VARCHAR) as claim_type
+    , CAST(NULL AS INTEGER) as claim_count
+    , CAST(NULL AS DECIMAL) as paid_amount
     , '{{ var('tuva_last_run')}}' as tuva_last_run
 
 {{ limit_zero()}}
