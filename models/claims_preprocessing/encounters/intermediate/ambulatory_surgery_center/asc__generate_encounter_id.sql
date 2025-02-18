@@ -30,7 +30,7 @@ with base_data as (
     select
         gd.*
       , case 
-            when start_date > coalesce(previous_max_end_date, '1900-01-01') then 1 
+            when start_date > coalesce(previous_max_end_date, cast('1900-01-01' as date)) then 1 
             else 0 
         end as new_group_flag
     from grouped_data as gd
