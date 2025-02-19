@@ -54,6 +54,11 @@ clean-targets:
     - "target"
     - "dbt_packages"
 
+models:
+  the_tuva_project:
+      +schema: "tuva_{{ target.schema }}" 
+      +table_type: iceberg
+
 seeds:
   the_tuva_project:
     clinical_concept_library:
