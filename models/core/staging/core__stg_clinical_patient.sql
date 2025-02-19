@@ -5,7 +5,7 @@
 
 with tuva_last_run as(
     select
-       cast('{{ var('tuva_last_run')}}' as {{ dbt.type_timestamp() }} ) as tuva_last_run_datetime
+       cast('{{ var('tuva_last_run')}}' as TIMESTAMP(6) ) as tuva_last_run_datetime
        , cast(substring('{{ var('tuva_last_run')}}',1,10) as date ) as tuva_last_run_date
 )
 SELECT

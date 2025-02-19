@@ -686,7 +686,7 @@ select distinct
     , cast(unpivot_cte.modifier_5 as {{ dbt.type_string() }} ) as modifier_5
     , cast(unpivot_cte.practitioner_npi as {{ dbt.type_string() }} ) as practitioner_id
     , cast(unpivot_cte.data_source as {{ dbt.type_string() }} ) as data_source
-    , cast('{{ var('tuva_last_run')}}' as {{ dbt.type_timestamp() }} ) as tuva_last_run
+    , cast('{{ var('tuva_last_run')}}' as TIMESTAMP(6) ) as tuva_last_run
 from unpivot_cte
 --inner join {{ ref('encounters__combined_claim_line_crosswalk') }} x on unpivot_cte.claim_id = x.claim_id
 --and

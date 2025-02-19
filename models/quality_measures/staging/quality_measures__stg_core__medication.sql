@@ -43,7 +43,7 @@ from {{ ref('core__medication') }}
         , cast(null as {{ dbt.type_string() }} ) as source_code
         , cast(null as {{ dbt.type_string() }} ) as ndc_code
         , cast(null as {{ dbt.type_string() }} ) as rxnorm_code
-        , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
+        , cast(null as TIMESTAMP(6) ) as tuva_last_run
 {% else %}
 select
           cast(null as {{ dbt.type_string() }} ) as person_id
@@ -54,7 +54,7 @@ select
         , cast(null as {{ dbt.type_string() }} ) as source_code
         , cast(null as {{ dbt.type_string() }} ) as ndc_code
         , cast(null as {{ dbt.type_string() }} ) as rxnorm_code
-        , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
+        , cast(null as TIMESTAMP(6) ) as tuva_last_run
     limit 0
 {%- endif %}
 

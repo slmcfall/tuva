@@ -46,7 +46,7 @@ from {{ ref('core__observation') }}
         , cast(null as {{ dbt.type_string() }} ) as normalized_code_type
         , cast(null as {{ dbt.type_string() }} ) as normalized_code
         , cast(null as {{ dbt.type_string() }} ) as normalized_description
-        , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
+        , cast(null as TIMESTAMP(6) ) as tuva_last_run
 {% else %}
 select
           cast(null as {{ dbt.type_string() }} ) as person_id
@@ -58,7 +58,7 @@ select
         , cast(null as {{ dbt.type_string() }} ) as normalized_code_type
         , cast(null as {{ dbt.type_string() }} ) as normalized_code
         , cast(null as {{ dbt.type_string() }} ) as normalized_description
-        , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
+        , cast(null as TIMESTAMP(6) ) as tuva_last_run
     limit 0
 {%- endif %}
 

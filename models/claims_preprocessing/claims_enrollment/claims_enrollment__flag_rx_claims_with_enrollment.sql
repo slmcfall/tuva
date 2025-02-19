@@ -37,7 +37,7 @@ select distinct
     , claim.data_source
     , mm.member_month_key
     , claim.paid_year_month
-    , cast('{{ var('tuva_last_run')}}' as {{ dbt.type_timestamp() }} ) as tuva_last_run
+    , cast('{{ var('tuva_last_run')}}' as TIMESTAMP(6) ) as tuva_last_run
 from {{ ref('core__member_months')}} mm
 inner join claim_dates claim
     on mm.person_id = claim.person_id

@@ -40,7 +40,7 @@ from {{ ref('core__encounter') }}
     , cast(null as {{dbt.type_numeric()}} ) as length_of_stay
     , {{ try_to_cast_date('null', 'YYYY-MM-DD') }} as encounter_start_date
     , {{ try_to_cast_date('null', 'YYYY-MM-DD') }} as encounter_end_date
-    , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
+    , cast(null as TIMESTAMP(6) ) as tuva_last_run
 {% else %}
     select
       cast(null as {{ dbt.type_string() }} ) as person_id
@@ -50,7 +50,7 @@ from {{ ref('core__encounter') }}
     , cast(null as {{dbt.type_numeric()}} ) as length_of_stay
     , {{ try_to_cast_date('null', 'YYYY-MM-DD') }} as encounter_start_date
     , {{ try_to_cast_date('null', 'YYYY-MM-DD') }} as encounter_end_date
-    , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
+    , cast(null as TIMESTAMP(6) ) as tuva_last_run
     limit 0
 {%- endif %}
 

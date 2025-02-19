@@ -52,7 +52,7 @@ from {{ ref('core__medical_claim') }}
         , cast(null as {{ dbt.type_string() }} ) as hcpcs_modifier_3
         , cast(null as {{ dbt.type_string() }} ) as hcpcs_modifier_4
         , cast(null as {{ dbt.type_string() }} ) as hcpcs_modifier_5
-        , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
+        , cast(null as TIMESTAMP(6) ) as tuva_last_run
 {% else %}
 select
          cast(null as {{ dbt.type_string() }} ) as person_id
@@ -66,7 +66,7 @@ select
         , cast(null as {{ dbt.type_string() }} ) as hcpcs_modifier_3
         , cast(null as {{ dbt.type_string() }} ) as hcpcs_modifier_4
         , cast(null as {{ dbt.type_string() }} ) as hcpcs_modifier_5
-        , cast(null as {{ dbt.type_timestamp() }} ) as tuva_last_run
+        , cast(null as TIMESTAMP(6) ) as tuva_last_run
     limit 0
 {%- endif %}
 

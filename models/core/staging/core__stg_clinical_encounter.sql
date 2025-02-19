@@ -47,5 +47,5 @@ select
   , cast(null as {{ dbt.type_int() }}) as prof_claim_count
   , cast(null as {{ dbt.type_string() }}) as source_model
   , cast(data_source as {{ dbt.type_string() }}) as data_source
-  , cast('{{ var('tuva_last_run') }}' as {{ dbt.type_timestamp() }}) as tuva_last_run
+  , cast('{{ var('tuva_last_run') }}' as TIMESTAMP(6)) as tuva_last_run
 from {{ ref('encounter') }}
