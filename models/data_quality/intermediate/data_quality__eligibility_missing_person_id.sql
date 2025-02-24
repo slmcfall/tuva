@@ -28,4 +28,4 @@ select
     , '{{ var('tuva_last_run')}}' as tuva_last_run
 from eligibility_spans
 where
-    person_id is null or person_id = ''
+    person_id is null or cast(person_id as varchar) = ''
